@@ -1,13 +1,14 @@
-use color_eyre::Result;
-use color_eyre::eyre;
-use color_eyre::eyre::Context;
-use demand::{DemandOption, Input, MultiSelect, Select};
-use dotenvy::dotenv;
-use rosu_pp::model::mode::GameMode as PpGameMode;
-use rosu_pp::{Beatmap as PpBeatmap, Performance};
-use rosu_v2::prelude::*;
-use std::env;
-use std::fmt::Display;
+use {
+    color_eyre::{
+        Result,
+        eyre::{self, Context},
+    },
+    demand::{DemandOption, Input, MultiSelect, Select},
+    dotenvy::dotenv,
+    rosu_pp::{Beatmap as PpBeatmap, Performance, model::mode::GameMode as PpGameMode},
+    rosu_v2::prelude::*,
+    std::{env, fmt::Display},
+};
 
 #[derive(Clone, Copy, Debug)]
 enum DetailedJudgements {
